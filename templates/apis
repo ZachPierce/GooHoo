@@ -1,0 +1,6 @@
+Reddit http://www.reddit.com/search.json?q={Query}
+Wikipedia http://en.wikipedia.org/w/api.php?format=json&action=query&titles={Query}&prop=revisions&rvprop=content
+DuckDuckGo http://api.duckduckgo.com/?q={Query}&format=json&pretty=1
+Artists http://developer.echonest.com/api/v4/artist/search?api_key=U3NO3IMD7LORQHXCG&name={Artist}
+song by artist http://developer.echonest.com/api/v4/song/search?api_key=FILDTEOIK2HBORODV&artist={Artist}&sort=song_hotttnesss-desc
+songs http://developer.echonest.com/api/v4/song/search?api_key=U3NO3IMD7LORQHXCG&title={songTilte}

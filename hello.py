@@ -1,6 +1,6 @@
 from flask import Flask, session, redirect, url_for, escape, request
 from flask import render_template
-from flask.ext.sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 db = SQLAlchemy(app)
@@ -21,14 +21,11 @@ class User(db.Model):
     def __repr__(self):
         return '<User %r>' % self.username
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/")
 def welcome():
-	if request.method == 'POST':
-		session['username'] = request.form['username']
-		return redirect(url_for('search'))
-	if 'username' in session:
-		return redirect(url_for('search'))
-	return render_template('welcome.html')
+    if 'username' in session:
+        return redirect(url_for('search'))
+    return render_template('welcome.html')
 
 @app.route("/search")
 def search():
@@ -52,11 +49,23 @@ def profile():
 		return render_template('profile.html')
 	return redirect(url_for('welcome'))
 
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':       
+        if User.query.filter_by(username=request.form['username']).first() is None:
+            db.session.add(User(request.form['username'],request.form['password']))
+            db.session.commit()
+            session['username'] = request.form['username']
+            return redirect(url_for('search'))
+        else:
+            return render_template('welcome')
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        session['username'] = request.form['username']
-        return redirect(url_for('welcome'))
+        if str((User.query.filter_by(username=request.form['username']).first()).password) == request.form['password']:
+            session['username'] = request.form['username']
+            return redirect(url_for('search'))
 
 @app.route('/logout')
 def logout():

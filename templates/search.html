@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Example of Twitter Bootstrap 3 Dropdowns within a Navbar</title>
+<title>Omniscent</title>
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
@@ -36,14 +36,42 @@ display: none;
         type="text/javascript"></script>
     <script language="Javascript" type="text/javascript">
     //<!
+      function makeActive(e)
+  {
+    console.log($(e).text());
+    $("#Engine1").text($(e).text());
+    
+  }
+function makeActive2(e)
+  {
+    console.log($(e).text());
+    $("#Engine2").text($(e).text());
+    
+  }
+  function makeActive3(e)
+  {
+    console.log($(e).text());
+    $("#Engine3").text($(e).text());
+    
+  }
+  function makeActive4(e)
+  {
+    console.log($(e).text());
+    $("#Engine4").text($(e).text());
+    
+  }
+
+
     google.load('search', '1');
 
-    var search = "cats"
+    var search = ""
 
     $(document).ready(function() {
       $("#submit").click(function()
       {
         search = document.getElementById("searchParam").value;
+        console.log(search);
+        Search(); onclick="makeActive(this)"
       });
     });
 
@@ -100,8 +128,9 @@ display: none;
 
       // execute an inital search
       searchControl4.execute(search);
+
     }
-    google.setOnLoadCallback(Search);
+   // 
 
     //]]>
     </script>
@@ -142,6 +171,9 @@ display: none;
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
+<!-- <div class="col-lg-10 col-lg-offset-1">
+  <div class="alert alert-danger"><center>You must enter a query</center></div>
+  </div> -->
 <div class="row">
   <div class="col-lg-6 col-lg-offset-3">
     <div class="input-group">
@@ -159,25 +191,24 @@ display: none;
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Google Web<b class="caret"></b></a>
+                        <a href="#" id="Engine1" data-toggle="dropdown" class="dropdown-toggle">Google Web</a><b class="caret"></b>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Google</a></li>
-                            <li><a href="#">Bing</a></li>
-                            <li><a href="#">Wikipedia</a></li>
-                            <li><a href="#">Yahoo</a></li>
-                            <li><a href="#">DuckDuckGo</a></li>
-                            <li><a href="#">Reddit</a></li>
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">Music</a></li>
-							<li><a href="#">Images</a></li>
+                            <li onclick="makeActive(this)"><a href="#">Google</a></li>
+                            <li onclick="makeActive(this)"><a href="#">Bing (BETA)</a></li>
+                            <li onclick="makeActive(this)"><a href="#">Wikipedia</a></li>
+                            <li onclick="makeActive(this)"><a href="#">Yahoo (BETA)</a></li>
+                            <li onclick="makeActive(this)"><a href="#">DuckDuckGo</a></li>
+                            <li onclick="makeActive(this)"><a href="#">Reddit</a></li>
+                            <li onclick="makeActive(this)"><a href="#">Facebook (BETA)</a></li>
+                            <li onclick="makeActive(this)"><a href="#">Twitter (BETA)</a></li>
+                            <li onclick="makeActive(this)"><a href="#">Music</a></li>
+							<li onclick="makeActive(this)"><a href="#">Images</a></li>
                             <li class="divider"></li>
-                            <li><a href="#" data-toggle="modal" data-target="#myModal">Specific Domain</a></li>
+                            <li onclick="makeActive(this)"><a href="#" data-toggle="modal" data-target="#myModal">Specific Domain (BETA)</a></li>
                         </ul>
                     </h3>
   </div>
   <div id="searchOne"class="panel-body">
-    Results
   </div>
 </div>
 
@@ -188,25 +219,24 @@ display: none;
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Google Image <b class="caret"></b></a>
+                        <a href="#" id="Engine2" data-toggle="dropdown" class="dropdown-toggle">Google Image</a><b class="caret"></b>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Google</a></li>
-                            <li><a href="#">Bing</a></li>
-                            <li><a href="#">Wikipedia</a></li>
-                            <li><a href="#">Yahoo</a></li>
-                            <li><a href="#">DuckDuckGo</a></li>
-                            <li><a href="#">Reddit</a></li>
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">Music</a></li>
-							<li><a href="#">Images</a></li>
+                            <li onclick="makeActive2(this)"><a href="#">Google</a></li>
+                            <li onclick="makeActive2(this)"><a href="#">Bing (BETA)</a></li>
+                            <li onclick="makeActive2(this)"><a href="#">Wikipedia</a></li>
+                            <li onclick="makeActive2(this)"><a href="#">Yahoo (BETA)</a></li>
+                            <li onclick="makeActive2(this)"><a href="#">DuckDuckGo</a></li>
+                            <li onclick="makeActive2(this)"><a href="#">Reddit</a></li>
+                            <li onclick="makeActive2(this)"><a href="#">Facebook (BETA)</a></li>
+                            <li onclick="makeActive2(this)"><a href="#">Twitter (BETA)</a></li>
+                            <li onclick="makeActive2(this)"><a href="#">Music</a></li>
+							<li onclick="makeActive2(this)"><a href="#">Images</a></li>
                             <li class="divider"></li>
-                            <li><a href="#" data-toggle="modal" data-target="#myModal">Specific Domain</a></li>
+                            <li onclick="makeActive2(this)"><a href="#" data-toggle="modal" data-target="#myModal">Specific Domain (BETA)</a></li>
                         </ul>
                     </h3>
   </div>
   <div class="panel-body" id="searchTwo">
-    Results
   </div>
 </div>
 
@@ -217,25 +247,24 @@ display: none;
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Google News <b class="caret"></b></a>
+                        <a href="#" id="Engine3" data-toggle="dropdown" class="dropdown-toggle">Google News</a><b class="caret"></b>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Google</a></li>
-                            <li><a href="#">Bing</a></li>
-                            <li><a href="#">Wikipedia</a></li>
-                            <li><a href="#">Yahoo</a></li>
-                            <li><a href="#">DuckDuckGo</a></li>
-                            <li><a href="#">Reddit</a></li>
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">Music</a></li>
-							<li><a href="#">Images</a></li>
+                            <li onclick="makeActive3(this)"><a href="#">Google</a></li>
+                            <li onclick="makeActive3(this)"><a href="#">Bing (BETA)</a></li>
+                            <li onclick="makeActive3(this)"><a href="#">Wikipedia</a></li>
+                            <li onclick="makeActive3(this)"><a href="#">Yahoo (BETA)</a></li>
+                            <li onclick="makeActive3(this)"><a href="#">DuckDuckGo</a></li>
+                            <li onclick="makeActive3(this)"><a href="#">Reddit</a></li>
+                            <li onclick="makeActive3(this)"><a href="#">Facebook (BETA)</a></li>
+                            <li onclick="makeActive3(this)"><a href="#">Twitter (BETA)</a></li>
+                            <li onclick="makeActive3(this)"><a href="#">Music</a></li>
+							<li onclick="makeActive3(this)"><a href="#">Images</a></li>
                             <li class="divider"></li>
-                            <li><a href="#" data-toggle="modal" data-target="#myModal">Specific Domain</a></li>
+                            <li onclick="makeActive3(this)"><a href="#" data-toggle="modal" data-target="#myModal">Specific Domain (BETA)</a></li>
                         </ul>
                     </h3>
   </div>
   <div class="panel-body" id="searchThree">
-    Results
   </div>
 </div>
 
@@ -246,25 +275,24 @@ display: none;
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Google Video <b class="caret"></b></a>
+                        <a href="#" id="Engine4" data-toggle="dropdown" class="dropdown-toggle">Google Video</a><b class="caret"></b>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Google</a></li>
-                            <li><a href="#">Bing</a></li>
-                            <li><a href="#">Wikipedia</a></li>
-                            <li><a href="#">Yahoo</a></li>
-                            <li><a href="#">DuckDuckGo</a></li>
-                            <li><a href="#">Reddit</a></li>
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">Music</a></li>
-							<li><a href="#">Images</a></li>
+                            <li onclick="makeActive4(this)"><a href="#">Google</a></li>
+                            <li onclick="makeActive4(this)"><a href="#">Bing (BETA)</a></li>
+                            <li onclick="makeActive4(this)"><a href="#">Wikipedia</a></li>
+                            <li onclick="makeActive4(this)"><a href="#">Yahoo (BETA)</a></li>
+                            <li onclick="makeActive4(this)"><a href="#">DuckDuckGo</a></li>
+                            <li onclick="makeActive4(this)"><a href="#">Reddit</a></li>
+                            <li onclick="makeActive4(this)"><a href="#">Facebook (BETA)</a></li>
+                            <li onclick="makeActive4(this)"><a href="#">Twitter (BETA)</a></li>
+                            <li onclick="makeActive4(this)"><a href="#">Music</a></li>
+							<li onclick="makeActive4(this)"><a href="#">Images</a></li>
                             <li class="divider"></li>
-                            <li><a href="#" data-toggle="modal" data-target="#myModal">Specific Domain</a></li>
+                            <li onclick="makeActive4(this)"><a href="#" data-toggle="modal" data-target="#myModal">Specific Domain (BETA)</a></li>
                         </ul>
                     </h3>
   </div>
   <div class="panel-body" id="searchFour">
-    Results
   </div>
 </div>
 
